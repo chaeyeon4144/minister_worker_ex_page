@@ -78,9 +78,9 @@ const logout = () => {
   .ml-64 {
     margin-left: 0;
   }
-  .w-64 {
-    width: 100%;
-  }
+  /* .w-64 {
+    width: 80%;
+  } */
   .p-8 {
     padding: 1rem;
   }

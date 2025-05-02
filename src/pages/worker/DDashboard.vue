@@ -227,7 +227,7 @@
 
     <!-- 모달 -->
     <!-- 작업 상세 정보 모달 -->
-    <div v-if="showJobModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center p-4 z-50">
+    <div v-if="showJobModal" class=" modal fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center p-4 z-50">
       <div class="bg-white rounded-lg shadow-xl max-w-md w-full">
         <div class="p-6 border-b border-gray-200">
           <div class="flex justify-between items-center">

@@ -995,12 +995,26 @@ const getAreaText = (area) => {
 // 기사 선택시 실행되는 함수
 
 const selectTechnician = (tecnnician) => {
-  selectedReservation.value.tecnnician = tecnnician; //예약정보에 선택한 기사 저장
-  technicianSearch.value = tecnnician.name;
+  selectedReservation.value.technician = tecnnician; //예약정보에 선택한 기사 저장
+  technicianSearch.value = technicians.name;
   closeTechnicianSearchModal();
 };
 // 기사 배정 저장 클릭시
 const saveTechnicianAssingment = () => {
-  
-}
+  if (!selectedReservation.value.technician) {
+    alert("담당 기사를 선택해주세요.");
+    return;
+  }
+  //기사배정 저장 로직
+  const index = reservations.value.findIndex((r) => r.id === selectedReservation.value.id);
+  if (index !== -1) {
+    reservations.value[index].technician = selectedReservation.value.technician;
+    alert(
+      `기사 배정이 완료되었습니다.\n 배정된 기사: ${selectedReservation.value.technician.name}\n예약번호:
+      ${selectedReservation.value.id}\n연락드리는기사에게 예약번호를 알려주세요.
+      `
+    );
+  }
+  closeModal();
+};
 </script>
